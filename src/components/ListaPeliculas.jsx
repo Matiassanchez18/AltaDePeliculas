@@ -10,7 +10,7 @@ const ListaPeliculas = ({ arrayPeliculas }) => {
         </div>
         <div className=" row justify-content-center">
           {arrayPeliculas.map((pelicula, posicion) => (
-            <Peliculas pelicula={pelicula} key={posicion}></Peliculas>
+            <Peliculas pelicula={pelicula} key={posicion} arrayPeliculas = {arrayPeliculas}></Peliculas>
           ))}
         </div>
       </article>

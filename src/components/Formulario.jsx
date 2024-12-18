@@ -135,7 +135,7 @@ const Formulario = () => {
       </article>
 
       <article>
-        <ListaPeliculas></ListaPeliculas>
+        <ListaPeliculas arrayPeliculas = {arrayPeliculas}></ListaPeliculas>
       </article>
     </section>
   );

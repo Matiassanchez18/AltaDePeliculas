@@ -5,10 +5,8 @@ import "../css/style.css"; // Si tienes estilos personalizados
 const PeliculasAgregadas = () => {
   return (
     <section>
-      <article className="fondo shadow" >
-        <div className="bg-white">
-          <h2 className="text-center border p-2">Peliculas agregadas</h2>
-        </div>
+    
+      <article className="fondo shadow border-start border-end" >
         <div className=" row justify-content-center">
           <div className="col-12 col-md-6 col-lg-6 mb-4 d-flex justify-content-center">
             <Card className="w-75 h-100 shadow mt-3 mb-4">

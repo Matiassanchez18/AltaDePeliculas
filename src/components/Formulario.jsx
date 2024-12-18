@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import "../css/style.css";
@@ -14,7 +14,10 @@ const Formulario = () => {
     reset,
   } = useForm();
 
-  const [arrayPeliculas, setarrayPeliculas] = useState([]);
+  const peliculaLocalStorage =
+    JSON.parse(localStorage.getItem("PeliculaKey")) || [];
+
+  const [arrayPeliculas, setarrayPeliculas] = useState(peliculaLocalStorage);
 
   const enviadoForm = (data) => {
     const peliculaExistente = arrayPeliculas.some(
@@ -37,10 +40,19 @@ const Formulario = () => {
     }
   };
 
-  const eliminadoPelicula = (peliculaBorrar) =>{
-    const peliculaEncontrada = arrayPeliculas.filter((pelicula)=> pelicula !== peliculaBorrar)
-    setarrayPeliculas(peliculaEncontrada)
-  }
+  useEffect (() => {
+      console.log("desde effect"),
+        localStorage.setItem("PeliculaKey", JSON.stringify(arrayPeliculas));
+    },
+    [arrayPeliculas]
+  );
+
+  const eliminadoPelicula = (peliculaBorrar) => {
+    const peliculaEncontrada = arrayPeliculas.filter(
+      (pelicula) => pelicula !== peliculaBorrar
+    );
+    setarrayPeliculas(peliculaEncontrada);
+  };
 
   return (
     <section className="container">
@@ -140,7 +152,10 @@ const Formulario = () => {
       </article>
 
       <article>
-        <ListaPeliculas arrayPeliculas = {arrayPeliculas} eliminadoPelicula ={eliminadoPelicula}></ListaPeliculas>
+        <ListaPeliculas
+          arrayPeliculas={arrayPeliculas}
+          eliminadoPelicula={eliminadoPelicula}
+        ></ListaPeliculas>
       </article>
     </section>
   );

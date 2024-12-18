@@ -37,6 +37,11 @@ const Formulario = () => {
     }
   };
 
+  const eliminadoPelicula = (peliculaBorrar) =>{
+    const peliculaEncontrada = arrayPeliculas.filter((pelicula)=> pelicula !== peliculaBorrar)
+    setarrayPeliculas(peliculaEncontrada)
+  }
+
   return (
     <section className="container">
       <article className="text-center mt-5 p-3 fondo shadow">
@@ -135,7 +140,7 @@ const Formulario = () => {
       </article>
 
       <article>
-        <ListaPeliculas arrayPeliculas = {arrayPeliculas}></ListaPeliculas>
+        <ListaPeliculas arrayPeliculas = {arrayPeliculas} eliminadoPelicula ={eliminadoPelicula}></ListaPeliculas>
       </article>
     </section>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import Peliculas from "./Peliculas";
 
-const ListaPeliculas = ({ arrayPeliculas }) => {
+const ListaPeliculas = ({ arrayPeliculas, eliminadoPelicula }) => {
   return (
     <section className="mt-5  p-3">
       <article className="border fondo shadow border-start border-end">
@@ -10,7 +10,7 @@ const ListaPeliculas = ({ arrayPeliculas }) => {
         </div>
         <div className=" row justify-content-center">
           {arrayPeliculas.map((pelicula, posicion) => (
-            <Peliculas pelicula={pelicula} key={posicion} arrayPeliculas = {arrayPeliculas}></Peliculas>
+            <Peliculas pelicula={pelicula} key={posicion} arrayPeliculas = {arrayPeliculas} eliminadoPelicula={eliminadoPelicula}></Peliculas>
           ))}
         </div>
       </article>

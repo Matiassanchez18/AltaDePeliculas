@@ -14,11 +14,9 @@ const Formulario = () => {
     reset,
   } = useForm();
 
-  // Inicializamos arrayPeliculas como un array vacío
   const [arrayPeliculas, setarrayPeliculas] = useState([]);
 
   const enviadoForm = (data) => {
-    // Verificamos si la película ya existe en el array
     const peliculaExistente = arrayPeliculas.some(
       (ipeliculas) => ipeliculas.Nombre === data.nombre.trim()
     );
@@ -26,17 +24,16 @@ const Formulario = () => {
     if (peliculaExistente) {
       alert("La película ya existe");
     } else {
-      // Si no existe, agregamos la nueva película
       const nuevaPelicula = {
         Nombre: data.nombre.trim(),
         Descripcion: data.descripcion.trim(),
         Genero: data.genero.trim(),
         Imagen: data.imagen.trim(),
       };
-      // Actualizamos el estado con el nuevo array
+
       setarrayPeliculas([...arrayPeliculas, nuevaPelicula]);
-      console.log([...arrayPeliculas, nuevaPelicula]); // Mostramos el nuevo array en la consola
-      reset(); // Reiniciamos el formulario
+      console.log([...arrayPeliculas, nuevaPelicula]);
+      reset();
     }
   };
 
@@ -145,4 +142,3 @@ const Formulario = () => {
 };
 
 export default Formulario;
-

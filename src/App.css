@@ -5,3 +5,8 @@
 .textarea{
     resize: none;
 }
+
+.foto{
+ height: 200px;
+ object-fit: cover;
+}

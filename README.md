@@ -1,8 +1,25 @@
-# React + Vite
+# **Aplicación Web de Alta de Películas**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## **Descripción**
 
-Currently, two official plugins are available:
+Esta es una aplicación web construida con React que permite agregar películas a un sistema. El usuario puede ingresar el nombre, la descripción y seleccionar un género de la película, y luego esta se almacenará en el `localStorage` del navegador. Las películas almacenadas se muestran en tarjetas (cards) en la interfaz de usuario.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Características**
+
+- Formulario para ingresar el nombre, la descripción y el género de la película.
+- Al presionar el botón "Enviar", la película se guarda en el `localStorage`.
+- Las películas guardadas se visualizan en tarjetas en la interfaz de usuario.
+- Los datos de las películas persisten en el `localStorage` incluso si se recarga la página.
+
+## **Tecnologías Utilizadas**
+
+- **React**: Librería principal para construir la interfaz de usuario.
+- **CSS**: Para el estilo de la aplicación.
+- **LocalStorage**: Para almacenar los datos de las películas.
+
+## **Instrucciones para Ejecutar la Aplicación**
+
+### **1. Clonar el repositorio**
+
+```bash
+git clone https://github.com/tu-usuario/pelicula-app.git
